@@ -1,11 +1,14 @@
 const JsonConfiguration = require('./../util/JsonConfiguration');
 const express = require('express');
 
+/**
+ * The class that is used to resolve the way a request should go.
+ */
 class Redirections
 {
 
     /**
-     * 
+     * Construction of Redirections.
      * @param {JsonConfiguration} configuration 
      */
     constructor(configuration)
@@ -13,13 +16,16 @@ class Redirections
         this.configuration = configuration;
     }
 
+    /**
+     * Get the array containing all redirections objects.
+     */
     getRedirections()
     {
         return this.configuration.get('redirections');
     }
 
     /**
-     * 
+     * Resolves a request.
      * @param {Request} req 
      * @param {Response} res 
      */
@@ -33,7 +39,7 @@ class Redirections
             if (element.key === hostname.toLowerCase())
             { 
                 Log.info("Request resolved: " + hostname.toLowerCase() + " -> " + element.url);
-                res.redirect(element.url);
+                res.redirect(302, element.url);
             }
         });
 
