@@ -1,6 +1,6 @@
 ## Janus
 
-![travis-ci-build-status](https://travis-ci.com/Th3Shadowbroker/Janus.svg?branch=master)
+[![travis-ci-build-status](https://travis-ci.com/Th3Shadowbroker/Janus.svg?branch=master)](https://travis-ci.com/Th3Shadowbroker/Janus)
 
 Janus is a tiny webservice that's supposed to run behind a reverse proxy-configuration and
 redirects incoming requests based on the first part of the host. So for example:
